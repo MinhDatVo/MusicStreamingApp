@@ -2,25 +2,53 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600" 
+        mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="660" 
         x:Class="MusicStreamingApp.MainWindow"
-        MaxWidth="800" MaxHeight="600">
+        MaxWidth="1080" MaxHeight="660">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/> <!-- Menu/Search -->
+            <RowDefinition Height="*"/>   <!-- Main Content -->
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="600" />
+            <ColumnDefinition Width="200"/> <!-- Menu -->
+            <ColumnDefinition Width="*"/>   <!-- Main Content/Search -->
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Background="LightGray">
-            <TextBlock Text="MuSic" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        <!-- Menu -->
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Background="Black">
+            <TextBlock Text="MuSic" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="24"/>
         </StackPanel>
-        <StackPanel Grid.Column="1" Background="Black">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
-                <TextBox Width="400" Margin="10" />
-                <Button  Width="100" HorizontalAlignment="Center" Background="Blue" >
-                    <TextBlock TextAlignment="Center">Search</TextBlock>
+        
+        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Beige" BorderThickness="1,0,0,1">
+            <StackPanel Background="Black" Orientation="Horizontal">
+                <TextBox Width="400" Height="30" Margin="150 5 3 5" />
+                <Button Width="100" Background="Blue" Margin="15 0 0 0">
+                    <TextBlock Text="Search" TextAlignment="Center" Foreground="White"/>
                 </Button>
             </StackPanel>
-            <TextBlock Text="Main Content" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
-        </StackPanel>
+        </Border>
+        
+        <!-- Main Content -->
+        <Border Grid.Row="1" Grid.Column="1" >
+            <ScrollViewer Background="DarkGray">
+                <StackPanel>
+                    <TextBlock Text="Main Content Line 1" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 2" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 3" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 4" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 5" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 6" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 7" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 8" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 8" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 8" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 8" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 8" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 8" Foreground="White" Margin="10" FontSize="18"/>
+                    <TextBlock Text="Main Content Line 8" Foreground="White" Margin="10" FontSize="18"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Window>
